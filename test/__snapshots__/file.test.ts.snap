@@ -1,0 +1,94 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`整体测试 > 语法转换 1`] = `
+"import { tokenQa } from './constant';
+/* mixins
+[tokenQa] */
+const propsData = defineProps({
+  prop1: {
+    type: String | Array,
+    default: ''
+  },
+  prop2: String
+});
+// 第一个key
+const key1 = ref(0)
+const key2 = ref('string')
+const key3 = ref([0, 1, 2])
+const key4 = ref({
+  field1: '',
+  field12: undefined
+})
+const key5 = ref([{
+  value: 1,
+  label: '选项1'
+}])
+const key6 = ref(tokenQa)
+/** computed */
+// 第一个computed
+const key7 = computed(() => {
+  return key1.value + key2.value;
+})
+const key8 = computed(function () {
+  return key1.value + 3;
+})
+const key9 = computed({
+  get: function () {
+    return key1.value + 1;
+  },
+  set: function (v) {
+    key1.value = v - 1;
+  }
+})
+/** watch */
+// 第一个watch
+watch(watch1, (n) => {
+  method2(n);
+})
+watch(watch2, (n,oldn) => {
+  method3(n, oldn);
+})
+watch(watch3, (n) => {
+  method2(n);
+},
+{
+immediate: true,
+deep: true})
+watch(watch4, (n, oldn) => {
+  method3(n, oldn);
+})
+/** filters */
+// 第一个filter
+function filter1(val) {
+  return val + '1';
+} 
+const filter2 = function (val) {
+  return val + '2';
+}
+/** created */
+const id = router.query.id;
+method1(id);
+onMounted(() => {
+console.log('mounted');
+})
+onBeforeUnmount(() => {
+console.log('beforeDestroy');
+})
+/** methods */
+/**
+         * 打印id
+         * @param {string} id
+         */
+function method1(id) {
+  console.log('method1', id);
+} 
+// 方法2
+const method2 = function () {
+  console.log('method2');
+}
+const method3 = () => {
+  // 方法3
+  console.log('method3');
+}
+"
+`;

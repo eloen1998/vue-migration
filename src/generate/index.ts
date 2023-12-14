@@ -1,0 +1,8 @@
+export { generateComputed } from './computed'
+export { generateCreated } from './created'
+export { generateData } from './data'
+export { generateImport } from './import'
+export { generateMethod } from './method'
+export { generateProps } from './props'
+export { generateWatch } from './watch'
+export { wrapWithComment } from './other'
